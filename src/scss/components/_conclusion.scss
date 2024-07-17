@@ -1,0 +1,29 @@
+.conclusion {
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+  @include media(md) {
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+}
+
+.conclusion__title {
+  margin-bottom: 9px;
+
+  @include media(md) {
+    margin-bottom: 16px;
+  }
+}
+
+.conclusion__text {
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.14px;
+
+  @include media(md) {
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0.16px;
+  }
+}

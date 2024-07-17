@@ -1,0 +1,111 @@
+
+.rating-container {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  border: none;
+  padding: 0;
+  padding-left: calc(18px + 8px);
+  gap: 4px;
+
+  .rating-value {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 18px;
+    height: 36px;
+    transform: translateY(-50%);
+
+    &::before {
+      content: "0";
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      font-weight: 500;
+      font-variant-numeric: normal;
+      font-size: 28px;
+      line-height: 36px;
+      text-align: center;
+      transform-origin: "center center";
+      transition: var(--transition);
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  label {
+    width: 27px;
+    height: 27px;
+    transform-origin: "center center";
+    cursor: pointer;
+
+    svg {
+      color: var(--star-default);
+      transition: var(--transition);
+    }
+
+    &:hover {
+      svg {
+        color: var(--star);
+      }
+    }
+  }
+}
+
+input:checked ~ label svg {
+  color: var(--star);
+}
+
+label:hover {
+  svg,
+  ~ label svg {
+    color: var(--star);
+  }
+}
+
+input:checked {
+  + label:hover svg {
+    color: var(--star);
+  }
+
+  ~ label:hover {
+    svg,
+    ~ label svg {
+      color: var(--star);
+    }
+  }
+}
+
+label:hover ~ input:checked ~ label svg {
+  color: var(--star);
+}
+
+#rate1:checked ~ .rating-value::before,
+label[for="rate1"]:hover ~ .rating-value::before{
+  content: "1";
+}
+
+#rate2:checked ~ .rating-value::before,
+label[for="rate2"]:hover ~ .rating-value::before{
+  content: "2";
+}
+
+#rate3:checked ~ .rating-value::before,
+label[for="rate3"]:hover ~ .rating-value::before{
+  content: "3";
+}
+
+#rate4:checked ~ .rating-value::before,
+label[for="rate4"]:hover ~ .rating-value::before{
+  content: "4";
+}
+
+#rate5:checked ~ .rating-value::before,
+label[for="rate5"]:hover ~ .rating-value::before{
+  content: "5";
+}

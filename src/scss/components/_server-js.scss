@@ -1,0 +1,69 @@
+.server-js {
+  padding-bottom: 50px;
+
+  @include media(md) {
+    padding-bottom: 83px;
+  }
+}
+
+.server-js__wrapper {
+  @include media(md) {
+    border-top: 1px solid var(--stroke);
+  }
+}
+
+.server-js__title {
+  margin-bottom: 16px;
+
+  @include media(md) {
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+}
+
+.server-js__content {
+  @include media(md) {
+    @include flex;
+
+    gap: 20px;
+  }
+}
+
+.server-js__icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  color: var(--accent-color);
+
+  @include media(sm-max) {
+    margin-bottom: 12px;
+  }
+}
+
+.blockquote {
+  margin: 0;
+  padding: 0;
+
+  &__text {
+    margin-bottom: 14px;
+    font-size: 18px;
+    line-height: 140%;
+
+    @include media(md) {
+      margin-bottom: 32px;
+      font-size: 22px;
+    }
+  }
+
+  &__author {
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 0.15px;
+    color: var(--plaseholder);
+
+    @include media(md) {
+      font-size: 16px;
+      letter-spacing: 0.16px;
+    }
+  }
+}

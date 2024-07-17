@@ -1,0 +1,16 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "settings";
+@import "./mixins/rating";
+@import "./mixins/input";
+
+// подключения компонентов страницы
+@import "./components/header";
+@import "./components/offer";
+@import "./components/server-js";
+@import "./components/banner";
+@import "./components/conclusion";
+@import "./components/question";
+@import "./components/post";
+@import "./components/modal";

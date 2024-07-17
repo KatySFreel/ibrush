@@ -1,0 +1,54 @@
+.input__content {
+  border: 1px solid var(--input-stroke);
+  border-radius: 10px;
+  padding: 15px 15px 18px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 15px;
+  caret-color: var(--accent-color);
+  background-color: var(--light-color);
+  transition: var(--transition);
+  cursor: pointer;
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0);
+  }
+
+  &:hover,
+  &:focus-within {
+    border-color: var(--accent-color);
+  }
+}
+
+.input__label {
+  position: relative;
+  display: block;
+  max-height: 0;
+  pointer-events: none;
+
+  &::before {
+    content: attr(data-content);
+    position: relative;
+    left: 1rem;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 15px;
+    color: var(--plaseholder);
+    filter: blur(0);
+    backface-visibility: hidden;
+    transform: translate3d(0, -53px, 0) scale3d(1, 1, 1);
+    transform-origin: left top;
+    transition: transform 0.2s ease;
+  }
+}
+
+.input__content:placeholder-shown + .input__label::before {
+  font-size: 14px;
+  transform: translate3d(0, -2.2rem, 0) scale3d(1, 1, 1);
+}
+
+.input__content:focus + .input__label::before {
+  font-size: 9px;
+  transform: translate3d(0, -53px, 0) scale3d(1, 1, 1);
+}
