@@ -1,5 +1,5 @@
 /node_modules
-gitignore
+.gitignore
 /gulp
-idea
-DS_Store
+.idea
+.DS_Store
